@@ -1,5 +1,8 @@
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixin
+from django.contrib.auth.mixins import(
+    LoginRequiredMixin,
+    PermissionRequiredMixin
+)
 
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
@@ -15,7 +18,7 @@ class CreateGroup(LoginRequiredMixin, generic.CreateView):
 class SingleGroup(generic.DetailView):
     model = Group
 
-class ListGroup(generic.ListView):
+class ListGroups(generic.ListView):
     model = Group
 
 
